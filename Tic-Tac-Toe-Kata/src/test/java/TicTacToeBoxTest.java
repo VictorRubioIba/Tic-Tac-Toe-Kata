@@ -12,7 +12,7 @@ public class TicTacToeBoxTest {
 
 		String result = box.getState("");
 
-		assertThat(Box.getState("")).isEqualTo(result);
+		assertThat(box.getState("")).isEqualTo(result);
 
 	}
 
@@ -22,7 +22,7 @@ public class TicTacToeBoxTest {
 
 		String result = box.getState("X");
 
-		assertThat(Box.getState("X")).isEqualTo(result);
+		assertThat(box.getState("X")).isEqualTo(result);
 
 	}
 
@@ -32,7 +32,7 @@ public class TicTacToeBoxTest {
 
 		String result = box.getState("Y");
 
-		assertThat(Box.getState("Y")).isEqualTo(result);
+		assertThat(box.getState("Y")).isEqualTo(result);
 
 	}
 
@@ -43,7 +43,7 @@ public class TicTacToeBoxTest {
 
 		String result = box.getState("x");
 
-		assertThat(Box.getState("")).isEqualTo(result);
+		assertThat(box.getState("")).isEqualTo(result);
 
 	}
 
