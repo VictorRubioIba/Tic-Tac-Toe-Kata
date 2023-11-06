@@ -7,6 +7,9 @@ public class Box {
 	}
 
 	public static String getState(String state) {
+		if(state!="X" || state!="Y"){
+			return "";
+		}
 		return state;
 	}
 }

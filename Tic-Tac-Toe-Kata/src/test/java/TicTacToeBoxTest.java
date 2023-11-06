@@ -26,6 +26,27 @@ public class TicTacToeBoxTest {
 
 	}
 
+	@Test
+	public void shouldReturnYIfTicTacToeIsY (){
+		Box box = new Box();
+
+		String result = box.getState("Y");
+
+		assertThat(Box.getState("Y")).isEqualTo(result);
+
+	}
+
+	@Test
+
+	public void shouldReturnEmptyIfTicTacToeIsDifferentXY (){
+		Box box = new Box();
+
+		String result = box.getState("x");
+
+		assertThat(Box.getState("")).isEqualTo(result);
+
+	}
+
 }
 
 
