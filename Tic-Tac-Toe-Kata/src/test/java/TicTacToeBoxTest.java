@@ -10,9 +10,19 @@ public class TicTacToeBoxTest {
 	public void shouldReturnEmptyIfNotTicTacToe (){
 		Box box = new Box();
 
-		String result = box.getState();
+		String result = box.getState("");
 
-		assertThat(Box.getState()).isEqualTo(result);
+		assertThat(Box.getState("")).isEqualTo(result);
+
+	}
+
+	@Test
+	public void shouldReturnXIfTicTacToeIsX (){
+		Box box = new Box();
+
+		String result = box.getState("X");
+
+		assertThat(Box.getState("X")).isEqualTo(result);
 
 	}
 

@@ -6,7 +6,7 @@ public class Box {
 		this.state = state ;
 	}
 
-	public static String getState() {
-		return "";
+	public static String getState(String state) {
+		return state;
 	}
 }
