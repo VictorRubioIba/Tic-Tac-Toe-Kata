@@ -1,6 +1,5 @@
 public class Board {
-	private int positionX;
-	private int positionY;
+
 	private Box [][] board = new Box[3][3];
 
 	public Board() {
