@@ -1,15 +1,19 @@
 public class Box {
 
-	private static String state;
+	public String state;
 
-	public void Box(String state) {
-		this.state = state ;
+	public void Box() {
+		this.state = "" ;
 	}
 
-	public static String getState(String state) {
-		if(state!="X" || state!="Y"){
-			return "";
-		}
+	public String getState() {
 		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state!="X" && state!="Y"){
+			this.state = "";
+		}
 	}
 }

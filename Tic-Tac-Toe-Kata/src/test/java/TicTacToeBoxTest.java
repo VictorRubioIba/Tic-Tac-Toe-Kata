@@ -10,9 +10,9 @@ public class TicTacToeBoxTest {
 	public void shouldReturnEmptyIfNotTicTacToe (){
 		Box box = new Box();
 
-		String result = box.getState("");
+		String result = box.getState();
 
-		assertThat(box.getState("")).isEqualTo(result);
+		assertThat(box.getState()).isEqualTo(result);
 
 	}
 
@@ -20,9 +20,9 @@ public class TicTacToeBoxTest {
 	public void shouldReturnXIfTicTacToeIsX (){
 		Box box = new Box();
 
-		String result = box.getState("X");
+		box.setState("X");
 
-		assertThat(box.getState("X")).isEqualTo(result);
+		assertThat(box.getState()).isEqualTo("X");
 
 	}
 
@@ -30,9 +30,9 @@ public class TicTacToeBoxTest {
 	public void shouldReturnYIfTicTacToeIsY (){
 		Box box = new Box();
 
-		String result = box.getState("Y");
+		box.setState("Y");
 
-		assertThat(box.getState("Y")).isEqualTo(result);
+		assertThat(box.getState()).isEqualTo("Y");
 
 	}
 
@@ -41,9 +41,9 @@ public class TicTacToeBoxTest {
 	public void shouldReturnEmptyIfTicTacToeIsDifferentXY (){
 		Box box = new Box();
 
-		String result = box.getState("x");
+		box.setState("x");
 
-		assertThat(box.getState("")).isEqualTo(result);
+		assertThat(box.getState()).isEqualTo("");
 
 	}
 
