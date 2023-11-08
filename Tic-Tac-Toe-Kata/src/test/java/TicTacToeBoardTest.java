@@ -1,6 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class TicTacToeBoardTest {
@@ -46,8 +45,12 @@ public class TicTacToeBoardTest {
   }
 
   @Test
-  public void shouldReturnTrueIfWin() {
+  public void shouldReturnTrueIfWinOnColumn() {
     Board board = new Board();
+
+    board.setStatusBoxInBoard(0, 0, "X");
+    board.setStatusBoxInBoard(0, 1, "X");
+    board.setStatusBoxInBoard(0, 2, "X");
 
     assertThat(board.checkWinner()).isTrue();
   }

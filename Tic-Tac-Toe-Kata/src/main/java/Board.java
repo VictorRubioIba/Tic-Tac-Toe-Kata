@@ -20,6 +20,23 @@ public class Board {
 
 
 	public boolean checkWinner() {
-		return true;
+		return checkColumnWinner();
+	}
+
+	public boolean checkColumnWinner() {
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board.length; j++) {
+				if(board[0][0].getState().equals("X") && board[0][1].getState().equals("X") && board[0][2].getState().equals("X")) {
+					return true;
+				}
+				if(board[1][0].getState().equals("Y") && board[1][1].getState().equals("Y") && board[1][2].getState().equals("Y")) {
+					return true;
+				}
+				if(board[2][0].getState().equals("Y") && board[2][1].getState().equals("Y") && board[2][2].getState().equals("Y")) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }
