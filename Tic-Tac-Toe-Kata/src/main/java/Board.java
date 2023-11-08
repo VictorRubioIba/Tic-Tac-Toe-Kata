@@ -17,4 +17,9 @@ public class Board {
 	public void setStatusBoxInBoard(int positionX, int positionY, String state) {
 		this.board[positionX][positionY].setState(state);
 	}
+
+
+	public boolean checkWinner() {
+		return true;
+	}
 }

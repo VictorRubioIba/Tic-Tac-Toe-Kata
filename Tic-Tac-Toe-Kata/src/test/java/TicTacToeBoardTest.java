@@ -44,4 +44,11 @@ public class TicTacToeBoardTest {
 
     assertThat(board.getStatusBoxInBoard(1, 1)).isEqualTo("");
   }
+
+  @Test
+  public void shouldReturnTrueIfWin() {
+    Board board = new Board();
+
+    assertThat(board.checkWinner()).isTrue();
+  }
 }
