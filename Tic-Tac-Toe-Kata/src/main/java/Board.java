@@ -19,31 +19,64 @@ public class Board {
   }
 
   public boolean checkWinner() {
+    return checkColumn() || checkRow() || checkDiagonal();
+  }
+
+  private boolean checkColumn() {
     for (int i = 0; i < board.length; i++) {
-      for (int j = 0; j < board.length; j++) {
-        if (board[i][j].getState().equals("X")
-            && board[i][j + 1].getState().equals("X")
-            && board[i][j + 2].getState().equals("X")) {
-          return true;
-        }
-        if (board[i][j].getState().equals("Y")
-            && board[i][j + 1].getState().equals("Y")
-            && board[i][j + 2].getState().equals("Y")) {
-          return true;
-        }
-        if (board[i][j].getState().equals("X")
-            && board[i + 1][j].getState().equals("X")
-            && board[i + 2][j].getState().equals("X")) {
-          return true;
-        }
-        if (board[i][j].getState().equals("Y")
-            && board[i + 1][j].getState().equals("Y")
-            && board[i + 2][j].getState().equals("Y")) {
-          return true;
-        }
+      if (board[i][0].getState().equals("X")
+          && board[i][1].getState().equals("X")
+          && board[i][2].getState().equals("X")) {
+        return true;
+      }
+      if (board[i][0].getState().equals("Y")
+          && board[i][1].getState().equals("Y")
+          && board[i][2].getState().equals("Y")) {
+        return true;
       }
     }
     return false;
+  }
 
+  private boolean checkRow() {
+    for (int i = 0; i < board.length; i++) {
+      if (board[0][i].getState().equals("X")
+          && board[1][i].getState().equals("X")
+          && board[2][i].getState().equals("X")) {
+        return true;
+      }
+      if (board[0][i].getState().equals("Y")
+          && board[1][i].getState().equals("Y")
+          && board[2][i].getState().equals("Y")) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private boolean checkDiagonal() {
+    for (int i = 0; i < board.length; i++) {
+      if (board[0][0].getState().equals("X")
+          && board[1][1].getState().equals("X")
+          && board[2][2].getState().equals("X")) {
+        return true;
+      }
+      if (board[0][2].getState().equals("Y")
+          && board[1][1].getState().equals("Y")
+          && board[2][0].getState().equals("Y")) {
+        return true;
+      }
+      if (board[0][0].getState().equals("Y")
+          && board[1][1].getState().equals("Y")
+          && board[2][2].getState().equals("Y")) {
+        return true;
+      }
+      if (board[0][2].getState().equals("X")
+          && board[1][1].getState().equals("X")
+          && board[2][0].getState().equals("X")) {
+        return true;
+      }
+    }
+    return false;
   }
 }

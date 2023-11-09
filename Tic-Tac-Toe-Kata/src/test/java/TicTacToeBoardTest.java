@@ -64,4 +64,14 @@ public class TicTacToeBoardTest {
 
     assertThat(board.checkWinner()).isTrue();
   }
+  @Test
+  public void shouldReturnTrueIfWinOnDiagonal() {
+    Board board = new Board();
+
+    board.setStatusBoxInBoard(0, 0, "Y");
+    board.setStatusBoxInBoard(1, 1, "Y");
+    board.setStatusBoxInBoard(2, 2, "Y");
+
+    assertThat(board.checkWinner()).isTrue();
+  }
 }
