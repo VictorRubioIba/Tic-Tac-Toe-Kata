@@ -1,5 +1,4 @@
 import static org.assertj.core.api.Assertions.assertThat;
-
 import org.testng.annotations.Test;
 
 public class TicTacToeBoardTest {
@@ -9,9 +8,9 @@ public class TicTacToeBoardTest {
 
     Board board = new Board();
 
-    board.setStatusBoxInBoard(1, 1, "");
+    board.setStatusBoxInBoard(1, 1, " ");
 
-    assertThat(board.getStatusBoxInBoard(1, 1)).isEqualTo("");
+    assertThat(board.getStatusBoxInBoard(1, 1)).isEqualTo(" ");
   }
 
   @Test
@@ -41,7 +40,7 @@ public class TicTacToeBoardTest {
 
     board.setStatusBoxInBoard(1, 1, "n");
 
-    assertThat(board.getStatusBoxInBoard(1, 1)).isEqualTo("");
+    assertThat(board.getStatusBoxInBoard(1, 1)).isEqualTo(" ");
   }
 
   @Test
@@ -51,6 +50,17 @@ public class TicTacToeBoardTest {
     board.setStatusBoxInBoard(0, 0, "X");
     board.setStatusBoxInBoard(0, 1, "X");
     board.setStatusBoxInBoard(0, 2, "X");
+
+    assertThat(board.checkWinner()).isTrue();
+  }
+
+  @Test
+  public void shouldReturnTrueIfWinOnRow() {
+    Board board = new Board();
+
+    board.setStatusBoxInBoard(0, 0, "Y");
+    board.setStatusBoxInBoard(1, 0, "Y");
+    board.setStatusBoxInBoard(2, 0, "Y");
 
     assertThat(board.checkWinner()).isTrue();
   }
