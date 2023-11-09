@@ -43,7 +43,7 @@ public class TicTacToeBoxTest {
 
 		box.setState("x");
 
-		assertThat(box.getState()).isEqualTo("");
+		assertThat(box.getState()).isEqualTo(" ");
 
 	}
 

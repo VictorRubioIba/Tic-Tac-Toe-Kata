@@ -1,9 +1,9 @@
 public class Box {
 
-	public String state;
+	public String state =" ";
 
 	public void Box() {
-		this.state = "" ;
+		this.state = " " ;
 	}
 
 	public String getState() {
@@ -13,7 +13,7 @@ public class Box {
 	public void setState(String state) {
 		this.state = state;
 		if(state!="X" && state!="Y"){
-			this.state = "";
+			this.state = " ";
 		}
 	}
 }
