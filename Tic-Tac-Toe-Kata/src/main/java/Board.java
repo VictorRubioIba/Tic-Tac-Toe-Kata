@@ -1,3 +1,5 @@
+import org.example.Position;
+
 public class Board {
 
   private Box[][] board = new Box[3][3];
@@ -10,12 +12,12 @@ public class Board {
     }
   }
 
-  public String getStatusBoxInBoard(int positionX, int positionY) {
-    return board[positionX][positionY].getState();
+  public String getStatusBoxInBoard(Position position) {
+    return board[position.positionX()][position.positionY()].getState();
   }
 
-  public void setStatusBoxInBoard(int positionX, int positionY, String state) {
-    this.board[positionX][positionY].setState(state);
+  public void setStatusBoxInBoard(Position position, String state) {
+    this.board[position.getPositionX()][position.getPositionY()].setState(state);
   }
 
   public boolean checkWinner() {
