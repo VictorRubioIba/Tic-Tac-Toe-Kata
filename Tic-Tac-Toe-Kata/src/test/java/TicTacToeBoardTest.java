@@ -11,7 +11,7 @@ public class TicTacToeBoardTest {
 
     board.play(new Position(1, 1), Player.EMPTY);
 
-    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(Player.EMPTY);
+    assertThat(board.playerPosition(new Position(1, 1))).isEqualTo(Player.EMPTY);
   }
 
   @Test
@@ -21,7 +21,7 @@ public class TicTacToeBoardTest {
 
     board.play(new Position(1, 1), Player.X);
 
-    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(Player.X);
+    assertThat(board.playerPosition(new Position(1, 1))).isEqualTo(Player.X);
   }
 
   @Test
@@ -31,7 +31,7 @@ public class TicTacToeBoardTest {
 
     board.play(new Position(1, 1), Player.O);
 
-    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(Player.O);
+    assertThat(board.playerPosition(new Position(1, 1))).isEqualTo(Player.O);
   }
 
   @Test
@@ -41,7 +41,7 @@ public class TicTacToeBoardTest {
 
     board.play(new Position(1, 1), Player.EMPTY);
 
-    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(Player.EMPTY);
+    assertThat(board.playerPosition(new Position(1, 1))).isEqualTo(Player.EMPTY);
   }
 
   @Test
