@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.Objects;
 
 public final class Position {
@@ -37,11 +35,11 @@ public final class Position {
     return "Position[" + "positionX=" + positionX + ", " + "positionY=" + positionY + ']';
   }
 
-	public int getPositionY() {
-		return positionY;
-	}
+  public int getPositionY() {
+    return positionY;
+  }
 
-	public int getPositionX() {
-		return positionX;
-	}
+  public int getPositionX() {
+    return positionX;
+  }
 }

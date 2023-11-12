@@ -1,6 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.example.Position;
 import org.testng.annotations.Test;
 
 public class TicTacToeBoardTest {
@@ -10,9 +9,9 @@ public class TicTacToeBoardTest {
 
     Board board = new Board();
 
-    board.setStatusBoxInBoard(new Position(1, 1), " ");
+    board.play(new Position(1, 1), Player.EMPTY);
 
-    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(" ");
+    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(Player.EMPTY);
   }
 
   @Test
@@ -20,9 +19,9 @@ public class TicTacToeBoardTest {
 
     Board board = new Board();
 
-    board.setStatusBoxInBoard(new Position(1, 1), "X");
+    board.play(new Position(1, 1), Player.X);
 
-    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo("X");
+    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(Player.X);
   }
 
   @Test
@@ -30,9 +29,9 @@ public class TicTacToeBoardTest {
 
     Board board = new Board();
 
-    board.setStatusBoxInBoard(new Position(1, 1), "Y");
+    board.play(new Position(1, 1), Player.O);
 
-    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo("Y");
+    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(Player.O);
   }
 
   @Test
@@ -40,40 +39,40 @@ public class TicTacToeBoardTest {
 
     Board board = new Board();
 
-    board.setStatusBoxInBoard(new Position(1, 1), "n");
+    board.play(new Position(1, 1), Player.EMPTY);
 
-    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(" ");
+    assertThat(board.getStatusBoxInBoard(new Position(1, 1))).isEqualTo(Player.EMPTY);
   }
 
   @Test
   public void shouldReturnTrueIfWinOnColumn() {
     Board board = new Board();
 
-    board.setStatusBoxInBoard(new Position(0, 0), "X");
-    board.setStatusBoxInBoard(new Position(0, 1), "X");
-    board.setStatusBoxInBoard(new Position(0, 2), "X");
+    board.play(new Position(0, 0), Player.X);
+    board.play(new Position(0, 1), Player.X);
+    board.play(new Position(0, 2), Player.X);
 
-    assertThat(board.checkWinner()).isTrue();
+    assertThat(board.getWinner()).isEqualTo(Player.X);
   }
 
   @Test
   public void shouldReturnTrueIfWinOnRow() {
     Board board = new Board();
 
-    board.setStatusBoxInBoard(new Position(0, 0), "Y");
-    board.setStatusBoxInBoard(new Position(1, 0), "Y");
-    board.setStatusBoxInBoard(new Position(2, 0), "Y");
+    board.play(new Position(0, 0), Player.O);
+    board.play(new Position(1, 0), Player.O);
+    board.play(new Position(2, 0), Player.O);
 
-    assertThat(board.checkWinner()).isTrue();
+    assertThat(board.getWinner()).isEqualTo(Player.O);
   }
   @Test
   public void shouldReturnTrueIfWinOnDiagonal() {
     Board board = new Board();
 
-    board.setStatusBoxInBoard(new Position(0, 0), "Y");
-    board.setStatusBoxInBoard(new Position(1, 1), "Y");
-    board.setStatusBoxInBoard(new Position(2, 2), "Y");
+    board.play(new Position(0, 0), Player.O);
+    board.play(new Position(1, 1), Player.O);
+    board.play(new Position(2, 2), Player.O);
 
-    assertThat(board.checkWinner()).isTrue();
+    assertThat(board.getWinner()).isEqualTo(Player.O);
   }
 }
